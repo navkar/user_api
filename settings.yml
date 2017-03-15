@@ -1,0 +1,14 @@
+web:
+  image: golang
+  # command: 
+  ports:
+    - "8080:8080"
+  links:
+   - db
+db:
+  image: postgresql
+  environment:
+    - POSTGRES_HOST=aws-docker
+    - POSTGRES_DBNAME=go_user_api
+    - POSTGRES_USER=user_name
+    - POSTGRES_PASSWORD=user_password
