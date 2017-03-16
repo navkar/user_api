@@ -25,6 +25,10 @@ go_api                                                   latest              5e1
 postgresql                                               latest              b5940e4e2b8e        32 hours ago        398 MB
 golang                                                   onbuild             5e66373f9a5d        2 weeks ago         697 MB
 
+navkar$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                    PORTS                    NAMES
+c8efaf4a74e0        postgresql          "/usr/lib/postgres..."   49 minutes ago      Up 40 minutes             5432/tcp                 userapi_db_1
+
 navkar$ docker run --env-file ./env.list --publish 8080:8080 --name go_api --link userapi_db_1:postgresql go_api
 + exec app
 [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.

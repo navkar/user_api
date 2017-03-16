@@ -37,7 +37,6 @@ func InitDb() *gorm.DB {
 	// Creating the table
 	if !db.HasTable(&Users{}) {
 		db.CreateTable(&Users{})
-		db.Set("gorm:table_options", "ENGINE=InnoDB").CreateTable(&Users{})
 	}
 
 	return db
