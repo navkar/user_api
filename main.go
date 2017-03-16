@@ -1,6 +1,9 @@
 package main
 
 import (
+	"fmt"
+	"os"
+
 	"github.com/gin-gonic/gin"
 	"github.com/jinzhu/gorm"
 	_ "github.com/lib/pq"
@@ -14,8 +17,16 @@ type Users struct {
 }
 
 func InitDb() *gorm.DB {
+	// var host string
+	host := os.Getenv("POSTGRES_HOST")
+	dbName := os.Getenv("POSTGRES_DBNAME")
+	user := os.Getenv("POSTGRES_USER")
+	password := os.Getenv("POSTGRES_PASSWORD")
+	connString := "host=" + host + " user=" + user + " dbname=" + dbName + " sslmode=disable password=" + password
+
+	fmt.Println("connection string: " + connString)
 	// Openning file
-	db, err := gorm.Open("postgres", "host=localhost user=navkar dbname=go_user_api sslmode=disable password=April26^2016")
+	db, err := gorm.Open("postgres", connString)
 	// Display SQL queries
 	db.LogMode(true)
 
@@ -181,7 +192,7 @@ func DeleteUser(c *gin.Context) {
 }
 
 func OptionsUser(c *gin.Context) {
-	c.Writer.Header().Set("Access-Control-Allow-Methods", "DELETE,POST, PUT")
+	c.Writer.Header().Set("Access-Control-Allow-Methods", "DELETE,POST,PUT")
 	c.Writer.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 	c.Next()
 }
