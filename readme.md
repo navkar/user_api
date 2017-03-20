@@ -1,11 +1,10 @@
 ### Docker 101
 
-* Uses Linux features like cgroups and namespaces
+* Uses Linux features like cgroups, chroot and namespaces
 * cgroups - This is a Linux kernel feature that isolates the resource usage (CPU, memory, disk, I/O, network etc)
 * namespaces - every container lives in its own namespace (mount, network interfaces, hostname)
 * Docker engine runs as a daemon, comes with a CLI and has a REST API.
-
-(docker-cheat-sheet) [https://github.com/wsargent/docker-cheat-sheet]
+* Docker commands list [docker-cheat-sheet]! (https://github.com/wsargent/docker-cheat-sheet)
 
 ![Docker](https://github.com/navkar/user_api/blob/master/images/Docker-vs-Virtualization.jpg)
 
