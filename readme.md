@@ -5,7 +5,7 @@
 * namespaces - every container lives in its own namespace (mount, network interfaces, hostname)
 * Docker engine runs as a daemon, comes with a CLI and has a REST API.
 
-[docker-cheat-sheet] (https://github.com/wsargent/docker-cheat-sheet)
+(docker-cheat-sheet) [https://github.com/wsargent/docker-cheat-sheet]
 
 ### How to setup the golang api with postgres as backend
 
