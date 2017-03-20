@@ -7,7 +7,11 @@
 
 (docker-cheat-sheet) [https://github.com/wsargent/docker-cheat-sheet]
 
+![Docker](https://github.com/navkar/user_api/blob/master/images/Docker-vs-Virtualization.jpg)
+
 ![Docker Architecture](https://github.com/navkar/user_api/blob/master/images/docker-architecture.png)
+
+![Cheat-sheet](https://github.com/navkar/user_api/blob/master/images/docker_cheat_sheet.png)
 
 ### How to setup the golang api with postgres as backend
 
