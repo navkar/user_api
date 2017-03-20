@@ -17,6 +17,7 @@ services:
       - POSTGRES_DBNAME=postgres
       - POSTGRES_USER=docker
       - POSTGRES_PASSWORD=docker    
+      # - GIN_MODE=release
     depends_on: 
     - db    
 # volumes:
