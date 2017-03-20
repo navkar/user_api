@@ -1,10 +1,10 @@
 ### Docker 101
 
 * Uses Linux features like cgroups, chroot and namespaces
-* cgroups - This is a Linux kernel feature that isolates the resource usage (CPU, memory, disk, I/O, network etc)
+* cgroups - a Linux kernel feature that isolates the resource usage (CPU, memory, disk, I/O, network etc)
 * namespaces - every container lives in its own namespace (mount, network interfaces, hostname)
 * Docker engine runs as a daemon, comes with a CLI and has a REST API.
-* Docker commands list [docker-cheat-sheet]! (https://github.com/wsargent/docker-cheat-sheet)
+* Docker commands list [](https://github.com/wsargent/docker-cheat-sheet)
 
 ![Docker](https://github.com/navkar/user_api/blob/master/images/Docker-vs-Virtualization.jpg)
 
@@ -73,10 +73,10 @@ c8efaf4a74e0        postgresql          "/usr/lib/postgres..."   39 minutes ago 
 navkar$ docker stats <id>
 ```
 
-### Docker compose file
+### Creating the containers using the docker compose file
 
-* The docker compose file consists of create and running the go_api and the database container
-* The command docker-compose up executes the file docker-compose.yml file
+* The docker compose file (`docker-compose.yml`) consists set of commands for creating and running the go_api and the database container.
+* The command `docker-compose up` executes the file docker-compose.yml file.
 
 ```bash
 
