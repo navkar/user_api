@@ -1,0 +1,23 @@
+version: "2"
+services: 
+  db:
+    container_name: user_api_db
+    image: postgresql
+  web:
+    container_name: user_api
+    image: go_api
+    command: go run main.go
+    build: ./server
+    volumes:
+      - ./server:/go/src/user_api
+    ports:
+      - "8080:8080"
+    environment:
+      - POSTGRES_HOST=user_api_db
+      - POSTGRES_DBNAME=postgres
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=docker    
+    depends_on: 
+    - db    
+# volumes:
+#   logvolume01: {}
