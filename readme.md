@@ -72,3 +72,40 @@ c8efaf4a74e0        postgresql          "/usr/lib/postgres..."   39 minutes ago 
 
 navkar$ docker stats <id>
 ```
+
+### Docker compose file
+
+* The docker compose file consists of create and running the go_api and the database container
+* The command docker-compose up executes the file docker-compose.yml file
+
+```bash
+
+navkar$ docker-compose up
+Creating network "userapi_default" with the default driver
+Creating user_api_db
+Creating user_api
+Attaching to user_api_db, user_api
+user_api_db | 2017-03-20 03:00:28.915 UTC [6] LOG:  database system was interrupted; last known up at 2017-03-14 15:55:27 UTC
+user_api_db | 2017-03-20 03:00:29.548 UTC [6] LOG:  database system was not properly shut down; automatic recovery in progress
+user_api_db | 2017-03-20 03:00:29.560 UTC [6] LOG:  redo starts at 0/17843C8
+user_api_db | 2017-03-20 03:00:29.560 UTC [6] LOG:  record with zero length at 0/1784408
+user_api_db | 2017-03-20 03:00:29.560 UTC [6] LOG:  redo done at 0/17843C8
+user_api_db | 2017-03-20 03:00:29.560 UTC [6] LOG:  last completed transaction was at log time 2017-03-14 15:55:27.964861+00
+user_api_db | 2017-03-20 03:00:29.647 UTC [6] LOG:  MultiXact member wraparound protections are now enabled
+user_api_db | 2017-03-20 03:00:29.650 UTC [10] LOG:  autovacuum launcher started
+user_api_db | 2017-03-20 03:00:29.651 UTC [1] LOG:  database system is ready to accept connections
+user_api | [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+user_api |  - using env:	export GIN_MODE=release
+user_api |  - using code:	gin.SetMode(gin.ReleaseMode)
+user_api | 
+user_api | [GIN-debug] POST   /api/v1/users             --> main.PostUser (4 handlers)
+user_api | [GIN-debug] GET    /api/v1/users             --> main.GetUsers (4 handlers)
+user_api | [GIN-debug] GET    /api/v1/users/:id         --> main.GetUser (4 handlers)
+user_api | [GIN-debug] PUT    /api/v1/users/:id         --> main.UpdateUser (4 handlers)
+user_api | [GIN-debug] DELETE /api/v1/users/:id         --> main.DeleteUser (4 handlers)
+user_api | [GIN-debug] Listening and serving HTTP on :8080
+user_api | connection string: host=user_api_db user=docker dbname=postgres sslmode=disable password=docker
+user_api | 
+user_api | (/go/src/app/main.go:39) 
+...
+```
