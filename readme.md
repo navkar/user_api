@@ -1,4 +1,17 @@
+### Docker 101
+
+* Uses Linux features like cgroups and namespaces
+* cgroups - This is a Linux kernel feature that isolates the resource usage (CPU, memory, disk, I/O, network etc)
+* namespaces - every container lives in its own namespace (mount, network interfaces, hostname)
+* Docker engine runs as a daemon, comes with a CLI and has a REST API.
+
+[docker-cheat-sheet] (https://github.com/wsargent/docker-cheat-sheet)
+
 ### How to setup the golang api with postgres as backend
+
+### What is a docker hub?
+
+* a cloud for sharing container images and automating workflows
 
 #### Building the docker image
 
@@ -48,3 +61,9 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 c8efaf4a74e0        postgresql          "/usr/lib/postgres..."   39 minutes ago      Up 31 minutes       5432/tcp                 userapi_db_1
 ```
 
+#### Container monitoring
+
+```bash
+
+navkar$ docker stats <id>
+```
