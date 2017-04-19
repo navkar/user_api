@@ -21,6 +21,14 @@
 # EXPOSE 8080
 
 # Refer - https://blog.golang.org/docker
+
+#Scratch Container implementation
+
+#FROM scratch
+#ADD executable /
+#CMD["/extecutable"]
+#EXPOSE 8080
+
 FROM golang:onbuild
 RUN go get github.com/gin-gonic/gin && \
     go get github.com/jinzhu/gorm && \
