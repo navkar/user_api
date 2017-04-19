@@ -21,10 +21,9 @@
 # EXPOSE 8080
 
 # Refer - https://blog.golang.org/docker
-
 FROM golang:onbuild
-RUN go get github.com/gin-gonic/gin
-RUN go get github.com/jinzhu/gorm
-RUN go get github.com/lib/pq
-RUN go build main.go
+RUN go get github.com/gin-gonic/gin && \
+    go get github.com/jinzhu/gorm && \
+    go get github.com/lib/pq
+CMD ["go","run","main.go"]
 EXPOSE 8080
